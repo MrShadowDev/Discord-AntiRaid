@@ -10,7 +10,7 @@ CONF = {
     "other": {
         "log_channel": "",
         "blacklisted": [           # These configs don't have any use yet but will as I improve the bot
- 
+
         ],
     "mod_role": "",
     "mod_role_id": 0,       
@@ -20,7 +20,11 @@ CONF = {
 
 # --------------- other ----------------
 os.system('cls' if os.name == 'nt' else 'clear')
-os.system(f'title Security v1 ~ Starting... ^| Github ~ @xtekky' if os.name == 'nt' else '')
+os.system(
+    'title Security v1 ~ Starting... ^| Github ~ @xtekky'
+    if os.name == 'nt'
+    else ''
+)
 cursor.hide()
 start = time.time()
 
@@ -41,7 +45,12 @@ async def on_ready():
     os.system('title Security v1 ~ Online ^| Github ~ @xtekky' if os.name == 'nt' else '')
 
     while True:
-        activity = discord.Activity(type=discord.ActivityType.playing, name=random.choice([f'Fucking nukers', 'L nukers', 'Sercurity', 'v.1.0']))
+        activity = discord.Activity(
+            type=discord.ActivityType.playing,
+            name=random.choice(
+                ['Fucking nukers', 'L nukers', 'Sercurity', 'v.1.0']
+            ),
+        )
         await bot.change_presence(activity=activity)
         await asyncio.sleep(10)
 
